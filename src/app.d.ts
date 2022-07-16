@@ -9,3 +9,10 @@ declare namespace App {
     // interface Session {}
     // interface Stuff {}
 }
+
+declare namespace svelte.JSX {
+    interface HTMLAttributes<T> {
+        oncopysuccess?: (event: CustomEvent) => void;
+        oncopyerror?: (event: CustomEvent) => void;
+    }
+}

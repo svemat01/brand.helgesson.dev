@@ -1,5 +1,6 @@
 <script lang="ts">
     import cssVars from 'svelte-css-vars';
+    import { clickToCopy } from '$lib/utils/clickToCopy';
 
     import Card from '$lib/components/Card.svelte';
 
@@ -8,18 +9,38 @@
     export let showColor = color;
     export let cardStyle = '';
 
+    const oldText = String(color);
+
+    function copySuccess(event: CustomEvent) {
+        if (event.detail !== color) return;
+        color = 'Copied!';
+        setTimeout(() => {
+            color = oldText;
+        }, 1000);
+    };
+
+    const copyError = (event: CustomEvent) => {
+        if (event.detail !== color) return;
+        color = 'Error!';
+        setTimeout(() => {
+            color = oldText;
+        }, 1000);
+    };
+
     $: styleVariables = {
         color,
         showColor,
     };
 </script>
 
+<svelte:window on:copysuccess={copySuccess} on:copyerror={copyError} />
+
 <Card column={false} gap="1rem" style={cardStyle}>
     <!-- eslint-disable-next-line prettier/prettier -->
     <div use:cssVars={styleVariables} class="colorBox" />
     <div use:cssVars={styleVariables} class="column">
         <p class="name">{name}</p>
-        <p class="color">{color}</p>
+        <p use:clickToCopy class="color">{color}</p>
     </div>
 </Card>
 
@@ -66,6 +87,11 @@
 
             @media (max-width: $breakpoint-md) {
                 font-size: 1.6rem;
+            }
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.8;
             }
         }
     }
