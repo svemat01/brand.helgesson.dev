@@ -1,4 +1,26 @@
-<h1>SvelteKit Template</h1>
-<p>
-    Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
+<script>
+    import Colors from '$lib/components/sections/Colors.svelte';
+    import Fonts from '$lib/components/sections/Fonts.svelte';
+    import Header from '$lib/components/sections/Header.svelte';
+</script>
+
+<div class="wrapper">
+    <Header />
+    <Colors />
+    <Fonts />
+</div>
+
+<style lang="scss">
+    .wrapper {
+        width: 100%;
+        max-width: 1000px;
+
+        margin-top: 7.5rem;
+        margin-inline: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+    }
+</style>
