@@ -2,10 +2,15 @@
     import jbLogo from '$lib/assets/jb_square.svg';
     import FontCard from '../cards/FontCard.svelte';
 
-    const fonts = [
+    const fonts: {
+        name: string;
+        image: string;
+        url: string;
+    }[] = [
         {
             name: 'Jetbrains\nMono',
             image: jbLogo,
+            url: 'https://www.jetbrains.com/lp/mono/',
         },
     ];
 </script>
@@ -14,7 +19,7 @@
     <h3>Fonts:</h3>
     <div class="row">
         {#each fonts as font}
-            <FontCard image={font.image} name={font.name} />
+            <FontCard image={font.image} name={font.name} url={font.url} />
         {/each}
     </div>
 </div>

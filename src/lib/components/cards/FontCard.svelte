@@ -3,12 +3,13 @@
 
     export let name: string;
     export let image: string;
+    export let url: string;
 </script>
 
 <Card column={false} gap="1rem">
     <!-- eslint-disable-next-line prettier/prettier -->
     <img src={image} alt={image} class="logoBox" />
-    <p class="name">{name}</p>
+    <a class="name" href={url} target="_blank">{name}</a>
 </Card>
 
 <style lang="scss">
@@ -24,7 +25,7 @@
         }
     }
 
-    p {
+    a {
         margin-top: 0.2rem;
 
         line-height: 100%;
@@ -36,6 +37,11 @@
 
         @media (max-width: $breakpoint-md) {
             font-size: 2rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
         }
     }
 </style>
