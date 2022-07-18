@@ -1,16 +1,3 @@
-# SvelteKit Template
+# brand.helgesson.dev
 
-A very simple SvelteKit template with the essentials.
-
-# Content
-
--   SvelteKit Skeleton template
-
--   SCSS support
--   Global SCSS file
--   SCSS variable file
-
--   EsLint support
--   Follows [LVKSH rules](https://github.com/lvkdotsh/javascript)
--   Prettier support
--   Lint/Fix Command: `npm run lint` or `npm run fix`
+A website designed and built to make my colors, fonts, and other design elements more accessible.
