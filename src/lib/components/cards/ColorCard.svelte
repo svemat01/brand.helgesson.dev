@@ -8,6 +8,7 @@
     export let name: string;
     export let showColor = color;
     export let cardStyle = '';
+    export let outline = false;
 
     const oldText = String(color);
 
@@ -37,7 +38,7 @@
 
 <Card column={false} gap="1rem" style={cardStyle}>
     <!-- eslint-disable-next-line prettier/prettier -->
-    <div use:cssVars={styleVariables} class="colorBox" />
+    <div use:cssVars={styleVariables} class={outline ? 'colorBox outline' : 'colorBox'} />
     <div use:cssVars={styleVariables} class="column">
         <p class="name">{name}</p>
         <p use:clickToCopy class="color">{color}</p>
@@ -56,6 +57,10 @@
         @media (max-width: $breakpoint-md) {
             width: 4.5rem;
             height: 4.5rem;
+        }
+
+        &.outline {
+            border: 2px solid var(--showColor);
         }
     }
 
