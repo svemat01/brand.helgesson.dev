@@ -34,5 +34,7 @@
         border-radius: 0.8rem;
 
         background-color: $dark-light-color;
+
+        filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
     }
 </style>
