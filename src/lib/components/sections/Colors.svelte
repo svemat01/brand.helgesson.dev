@@ -10,7 +10,7 @@
     // $orange-color: #fa9f42;
     // $pink-color: #ff1654;
 
-    const mainColors: { name: string; color: string; showColor?: string }[] = [
+    const mainColors: { name: string; color: string; showColor?: string; outline?: boolean }[] = [
         {
             name: 'Brand',
             color: '#37FF8B',
@@ -21,12 +21,13 @@
         },
         {
             name: 'Dark',
-            color: '#191919',
+            color: '#202020',
             showColor: '#FFFDFA',
+            outline: true,
         },
     ];
 
-    const accentColors: { name: string; color: string; showColor?: string }[] =
+    const accentColors: { name: string; color: string; showColor?: string; outline?: boolean }[] =
         [
             {
                 name: 'Blue',
@@ -53,6 +54,7 @@
                 color={color.color}
                 showColor={color.showColor || color.color}
                 cardStyle="grid-column: 1"
+                outline={color.outline ?? false}
             />
         {/each}
         {#each accentColors as color}
@@ -61,6 +63,7 @@
                 color={color.color}
                 showColor={color.showColor || color.color}
                 cardStyle="grid-column: 2"
+                outline={color.outline ?? false}
             />
         {/each}
     </div>
