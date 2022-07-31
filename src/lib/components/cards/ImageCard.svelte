@@ -27,6 +27,10 @@
     .imageBox {
         width: 100%;
 
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: top center;
+
         border-radius: 0.8rem;
 
         &.outline {

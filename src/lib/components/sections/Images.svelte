@@ -1,9 +1,12 @@
 <script lang="ts">
+    import ImageCard from '../cards/ImageCard.svelte';
+
     import logoDark from '$lib/assets/logoDark.svg';
     import logoLight from '$lib/assets/logoLight.svg';
     import logoTransparent from '$lib/assets/logoTransparent.svg';
     import pixelLogo from '$lib/assets/pixelLogo.webp';
-    import ImageCard from '../cards/ImageCard.svelte';
+    import portrait from '$lib/assets/jakobhelgesson.webp'
+    import portraitTransparent from '$lib/assets/jakobhelgesson-transparent.webp'
 
     const images: {
         name: string;
@@ -83,6 +86,35 @@
                 },
             ],
         },
+        {
+            name: 'Portrait',
+            image: portrait,
+            formats: [
+                {
+                    name: 'PNG',
+                    url: 'https://cdn.helgesson.dev/assets/branding/jakobhelgesson.png',
+                },
+                {
+                    name: 'WEBP',
+                    url: 'https://cdn.helgesson.dev/assets/branding/jakobhelgesson.webp',
+                },
+            ],
+        },
+        {
+            name: 'Portrait Transparent',
+            image: portraitTransparent,
+            formats: [
+                {
+                    name: 'PNG',
+                    url: 'https://cdn.helgesson.dev/assets/branding/jakobhelgesson-transparent.png',
+                },
+                {
+                    name: 'WEBP',
+                    url: 'https://cdn.helgesson.dev/assets/branding/jakobhelgesson-transparent.webp',
+                }
+            ],
+            outline: true,
+        }
     ];
 </script>
 
