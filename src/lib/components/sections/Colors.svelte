@@ -21,7 +21,7 @@
         },
         {
             name: 'Dark',
-            color: '#202020',
+            color: '#191919',
             showColor: '#FFFDFA',
             outline: true,
         },
