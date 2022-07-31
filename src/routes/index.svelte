@@ -2,12 +2,14 @@
     import Colors from '$lib/components/sections/Colors.svelte';
     import Fonts from '$lib/components/sections/Fonts.svelte';
     import Header from '$lib/components/sections/Header.svelte';
+    import Images from '$lib/components/sections/Images.svelte';
 </script>
 
 <div class="wrapper">
     <Header />
     <Colors />
     <Fonts />
+    <Images />
 </div>
 
 <style lang="scss">
