@@ -5,10 +5,9 @@ module.exports = {
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
         'prettier',
-        // 'plugin:lvksh/recommended',
         'plugin:svelte/prettier',
     ],
-    plugins: ['@typescript-eslint', 'lvksh'],
+    plugins: ['@typescript-eslint'],
     ignorePatterns: ['*.cjs'],
     overrides: [
         {
